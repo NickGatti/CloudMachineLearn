@@ -1,5 +1,11 @@
 # Cloud Based Machine Learning Result Indexing on a Blockchain, made with Javascript
 
+```
+Clone or Download then type:
+> node main.js
+script will run if node is installed on your computer
+```
+
 ### KNN Machine Learning Algorithm
 
 ```
