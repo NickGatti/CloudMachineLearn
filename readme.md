@@ -2,8 +2,9 @@
 
 ```
 Clone or Download then type:
+> npm install
 > node main.js
-script will run if node is installed on your computer
+script will run if node and npm is installed on your computer
 ```
 
 ### KNN Machine Learning Algorithm
