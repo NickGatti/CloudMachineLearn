@@ -1,7 +1,7 @@
 const ML = require('./node_modules/machine_learning/lib/machine_learning')
 
 class Block {
-    constructor(index, timestamp, data, result, previousHash = 0) {
+    constructor(index, timestamp, data, result) {
         this.index = index
         this.timestamp = timestamp
         this.data = data
@@ -40,10 +40,11 @@ class BlockChain {
     }
 
     createGeneisBlock() {
-        return new Block(0, '7-6-2018', [
-            [0, 1],
-            [0, 1]
-        ], '0')
+        return this.chain.push(new Block(0,
+            '7-6-2018 Genesis Block', [
+                [0, 0]
+            ], '0')
+        )
     }
 
     getLatestBlock() {
@@ -57,9 +58,10 @@ class BlockChain {
 }
 
 let dimChain = new BlockChain()
+dimChain.createGeneisBlock()
 dimChain.addBlock(new Block(
-    0,
-    '7-6-2018', [
+    dimChain.chain.length,
+    new Date, [
         [1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0],
         [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0],
         [1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0],
@@ -74,8 +76,8 @@ dimChain.addBlock(new Block(
     ], [23, 12, 23, 23, 45, 70, 123, 73, 146, 158, 64]
 ))
 dimChain.addBlock(new Block(
-    0,
-    '7-6-2018', [
+    dimChain.chain.length,
+    new Date, [
         [1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0],
         [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0],
         [1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0],
